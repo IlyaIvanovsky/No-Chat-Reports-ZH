@@ -1,0 +1,204 @@
+{
+  "mappings": {
+    "com/aizistral/nochatreports/common/mixins/client/MixinOptions": {
+      "onlyShowSecureChat": "Lnet/minecraft/client/Options;m_231836_()Lnet/minecraft/client/OptionInstance;"
+    },
+    "com/aizistral/nochatreports/common/mixins/common/MixinFriendlyByteBuf": {
+      "readJsonWithCodec": "Lnet/minecraft/network/FriendlyByteBuf;m_271872_(Lcom/mojang/serialization/Codec;)Ljava/lang/Object;",
+      "writeJsonWithCodec": "Lnet/minecraft/network/FriendlyByteBuf;m_272073_(Lcom/mojang/serialization/Codec;Ljava/lang/Object;)V"
+    },
+    "com/aizistral/nochatreports/forge/mixins/client/MixinClientHandshakePacketListenerImpl": {
+      "onDisconnect": "Lnet/minecraft/client/multiplayer/ClientHandshakePacketListenerImpl;m_7026_(Lnet/minecraft/network/chat/Component;)V"
+    },
+    "com/aizistral/nochatreports/common/mixins/client/MixinChatListener": {
+      "handleSystemMessage": "Lnet/minecraft/client/multiplayer/chat/ChatListener;m_240494_(Lnet/minecraft/network/chat/Component;Z)V",
+      "evaluateTrustLevel": "Lnet/minecraft/client/multiplayer/chat/ChatListener;m_245744_(Lnet/minecraft/network/chat/PlayerChatMessage;Lnet/minecraft/network/chat/Component;Ljava/time/Instant;)Lnet/minecraft/client/multiplayer/chat/ChatTrustLevel;",
+      "narrateChatMessage(Lnet/minecraft/network/chat/ChatType$Bound;Lnet/minecraft/network/chat/Component;)V": "Lnet/minecraft/client/multiplayer/chat/ChatListener;m_241119_(Lnet/minecraft/network/chat/ChatType$Bound;Lnet/minecraft/network/chat/Component;)V"
+    },
+    "com/aizistral/nochatreports/common/mixins/client/MixinGuiMessageTagIcon": {
+      "draw": "Lnet/minecraft/client/GuiMessageTag$Icon;m_240420_(Lcom/mojang/blaze3d/vertex/PoseStack;II)V"
+    },
+    "com/aizistral/nochatreports/common/mixins/client/MixinTitleScreen": {
+      "realmsButtonClicked": "Lnet/minecraft/client/gui/screens/TitleScreen;m_96793_()V"
+    },
+    "com/aizistral/nochatreports/common/mixins/server/MixinServerGamePacketListenerImpl": {
+      "send(Lnet/minecraft/network/protocol/Packet;)V": "Lnet/minecraft/server/network/ServerGamePacketListenerImpl;m_9829_(Lnet/minecraft/network/protocol/Packet;)V",
+      "send(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketSendListener;)V": "Lnet/minecraft/server/network/ServerGamePacketListenerImpl;m_243119_(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketSendListener;)V"
+    },
+    "com/aizistral/nochatreports/common/mixins/client/MixinRowHelper": {
+      "addChild(Lnet/minecraft/client/gui/layouts/LayoutElement;)Lnet/minecraft/client/gui/layouts/LayoutElement;": "Lnet/minecraft/client/gui/layouts/GridLayout$RowHelper;m_264139_(Lnet/minecraft/client/gui/layouts/LayoutElement;)Lnet/minecraft/client/gui/layouts/LayoutElement;"
+    },
+    "com/aizistral/nochatreports/common/mixins/server/MixinServerboundChatCommandPacket": {
+      "argumentSignatures": "Lnet/minecraft/network/protocol/game/ServerboundChatCommandPacket;f_237924_()Lnet/minecraft/commands/arguments/ArgumentSignatures;"
+    },
+    "com/aizistral/nochatreports/common/mixins/client/MixinMinecraft": {
+      "getProfileKeyPairManager": "Lnet/minecraft/client/Minecraft;m_231465_()Lnet/minecraft/client/multiplayer/ProfileKeyPairManager;",
+      "<init>(Lnet/minecraft/client/main/GameConfig;)V": "Lnet/minecraft/client/Minecraft;<init>(Lnet/minecraft/client/main/GameConfig;)V",
+      "allowsTelemetry": "Lnet/minecraft/client/Minecraft;m_261210_()Z"
+    },
+    "com/aizistral/nochatreports/common/mixins/client/MixinRealmsConnect": {
+      "connect": "Lnet/minecraft/realms/RealmsConnect;m_175031_(Lcom/mojang/realmsclient/dto/RealmsServer;Lnet/minecraft/client/multiplayer/resolver/ServerAddress;)V"
+    },
+    "com/aizistral/nochatreports/common/mixins/client/MixinChatComponent": {
+      "addRecentChat": "Lnet/minecraft/client/gui/components/ChatComponent;m_93783_(Ljava/lang/String;)V",
+      "Lnet/minecraft/client/gui/components/ComponentRenderUtils;wrapComponents(Lnet/minecraft/network/chat/FormattedText;ILnet/minecraft/client/gui/Font;)Ljava/util/List;": "Lnet/minecraft/client/gui/components/ComponentRenderUtils;m_94005_(Lnet/minecraft/network/chat/FormattedText;ILnet/minecraft/client/gui/Font;)Ljava/util/List;",
+      "addMessage(Lnet/minecraft/network/chat/Component;Lnet/minecraft/network/chat/MessageSignature;ILnet/minecraft/client/GuiMessageTag;Z)V": "Lnet/minecraft/client/gui/components/ChatComponent;m_240465_(Lnet/minecraft/network/chat/Component;Lnet/minecraft/network/chat/MessageSignature;ILnet/minecraft/client/GuiMessageTag;Z)V"
+    },
+    "com/aizistral/nochatreports/common/mixins/client/MixinToastComponent": {
+      "addToast": "Lnet/minecraft/client/gui/components/toasts/ToastComponent;m_94922_(Lnet/minecraft/client/gui/components/toasts/Toast;)V"
+    },
+    "com/aizistral/nochatreports/forge/mixins/client/MixinClientPacketListener": {
+      "onDisconnect": "Lnet/minecraft/client/multiplayer/ClientPacketListener;m_7026_(Lnet/minecraft/network/chat/Component;)V"
+    },
+    "com/aizistral/nochatreports/common/mixins/client/MixinServerData": {
+      "read": "Lnet/minecraft/client/multiplayer/ServerData;m_105385_(Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/client/multiplayer/ServerData;",
+      "write": "Lnet/minecraft/client/multiplayer/ServerData;m_105378_()Lnet/minecraft/nbt/CompoundTag;"
+    },
+    "com/aizistral/nochatreports/common/mixins/common/MixinServerStatus": {
+      "enforcesSecureChat": "Lnet/minecraft/network/protocol/status/ServerStatus;f_242955_()Z"
+    },
+    "com/aizistral/nochatreports/common/mixins/server/MixinDedicatedServer": {
+      "enforceSecureProfile": "Lnet/minecraft/server/dedicated/DedicatedServer;m_214005_()Z"
+    },
+    "com/aizistral/nochatreports/common/mixins/server/MixinPlayerList": {
+      "verifyChatTrusted": "Lnet/minecraft/server/players/PlayerList;m_247528_(Lnet/minecraft/network/chat/PlayerChatMessage;)Z"
+    },
+    "com/aizistral/nochatreports/common/mixins/server/MixinServerboundChatSessionUpdatePacket": {
+      "handle": "Lnet/minecraft/network/protocol/game/ServerboundChatSessionUpdatePacket;m_5797_(Lnet/minecraft/network/protocol/game/ServerGamePacketListener;)V"
+    },
+    "com/aizistral/nochatreports/common/mixins/server/MixinServerboundChatPacket": {
+      "signature": "Lnet/minecraft/network/protocol/game/ServerboundChatPacket;f_240898_()Lnet/minecraft/network/chat/MessageSignature;"
+    },
+    "com/aizistral/nochatreports/common/mixins/client/MixinClientPacketListener": {
+      "send(Lnet/minecraft/network/protocol/Packet;)V": "Lnet/minecraft/client/multiplayer/ClientPacketListener;m_104955_(Lnet/minecraft/network/protocol/Packet;)V"
+    },
+    "com/aizistral/nochatreports/common/mixins/client/MixinOnlineServerEntry": {
+      "render": "Lnet/minecraft/client/gui/screens/multiplayer/ServerSelectionList$OnlineServerEntry;m_6311_(Lcom/mojang/blaze3d/vertex/PoseStack;IIIIIIIZF)V"
+    },
+    "com/aizistral/nochatreports/forge/mixins/client/MixinClientConnection": {
+      "channelInactive": "Lnet/minecraft/network/Connection;channelInactive(Lio/netty/channel/ChannelHandlerContext;)V"
+    },
+    "com/aizistral/nochatreports/common/mixins/client/MixinChatScreen": {
+      "init": "Lnet/minecraft/client/gui/screens/ChatScreen;m_7856_()V",
+      "normalizeChatMessage": "Lnet/minecraft/client/gui/screens/ChatScreen;m_232706_(Ljava/lang/String;)Ljava/lang/String;",
+      "handleChatInput": "Lnet/minecraft/client/gui/screens/ChatScreen;m_241797_(Ljava/lang/String;Z)Z",
+      "tick": "Lnet/minecraft/client/gui/screens/ChatScreen;m_86600_()V"
+    },
+    "com/aizistral/nochatreports/common/mixins/client/MixinGuiMessageTag": {
+      "system": "Lnet/minecraft/client/GuiMessageTag;m_240701_()Lnet/minecraft/client/GuiMessageTag;",
+      "systemSinglePlayer": "Lnet/minecraft/client/GuiMessageTag;m_257673_()Lnet/minecraft/client/GuiMessageTag;"
+    },
+    "com/aizistral/nochatreports/common/mixins/client/MixinJoinMultiplayerScreen": {
+      "init": "Lnet/minecraft/client/gui/screens/multiplayer/JoinMultiplayerScreen;m_7856_()V"
+    },
+    "com/aizistral/nochatreports/common/mixins/client/MixinConnectScreen": {
+      "startConnecting": "Lnet/minecraft/client/gui/screens/ConnectScreen;m_169267_(Lnet/minecraft/client/gui/screens/Screen;Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/multiplayer/resolver/ServerAddress;Lnet/minecraft/client/multiplayer/ServerData;)V"
+    },
+    "com/aizistral/nochatreports/common/mixins/client/MixinServerStatusPinger$1": {
+      "Lnet/minecraft/network/protocol/status/ServerStatus;description()Lnet/minecraft/network/chat/Component;": "Lnet/minecraft/network/protocol/status/ServerStatus;f_134900_()Lnet/minecraft/network/chat/Component;",
+      "handleStatusResponse(Lnet/minecraft/network/protocol/status/ClientboundStatusResponsePacket;)V": "Lnet/minecraft/client/multiplayer/ServerStatusPinger$1;m_6440_(Lnet/minecraft/network/protocol/status/ClientboundStatusResponsePacket;)V"
+    }
+  },
+  "data": {
+    "searge": {
+      "com/aizistral/nochatreports/common/mixins/client/MixinOptions": {
+        "onlyShowSecureChat": "Lnet/minecraft/client/Options;m_231836_()Lnet/minecraft/client/OptionInstance;"
+      },
+      "com/aizistral/nochatreports/common/mixins/common/MixinFriendlyByteBuf": {
+        "readJsonWithCodec": "Lnet/minecraft/network/FriendlyByteBuf;m_271872_(Lcom/mojang/serialization/Codec;)Ljava/lang/Object;",
+        "writeJsonWithCodec": "Lnet/minecraft/network/FriendlyByteBuf;m_272073_(Lcom/mojang/serialization/Codec;Ljava/lang/Object;)V"
+      },
+      "com/aizistral/nochatreports/forge/mixins/client/MixinClientHandshakePacketListenerImpl": {
+        "onDisconnect": "Lnet/minecraft/client/multiplayer/ClientHandshakePacketListenerImpl;m_7026_(Lnet/minecraft/network/chat/Component;)V"
+      },
+      "com/aizistral/nochatreports/common/mixins/client/MixinChatListener": {
+        "handleSystemMessage": "Lnet/minecraft/client/multiplayer/chat/ChatListener;m_240494_(Lnet/minecraft/network/chat/Component;Z)V",
+        "evaluateTrustLevel": "Lnet/minecraft/client/multiplayer/chat/ChatListener;m_245744_(Lnet/minecraft/network/chat/PlayerChatMessage;Lnet/minecraft/network/chat/Component;Ljava/time/Instant;)Lnet/minecraft/client/multiplayer/chat/ChatTrustLevel;",
+        "narrateChatMessage(Lnet/minecraft/network/chat/ChatType$Bound;Lnet/minecraft/network/chat/Component;)V": "Lnet/minecraft/client/multiplayer/chat/ChatListener;m_241119_(Lnet/minecraft/network/chat/ChatType$Bound;Lnet/minecraft/network/chat/Component;)V"
+      },
+      "com/aizistral/nochatreports/common/mixins/client/MixinGuiMessageTagIcon": {
+        "draw": "Lnet/minecraft/client/GuiMessageTag$Icon;m_240420_(Lcom/mojang/blaze3d/vertex/PoseStack;II)V"
+      },
+      "com/aizistral/nochatreports/common/mixins/client/MixinTitleScreen": {
+        "realmsButtonClicked": "Lnet/minecraft/client/gui/screens/TitleScreen;m_96793_()V"
+      },
+      "com/aizistral/nochatreports/common/mixins/server/MixinServerGamePacketListenerImpl": {
+        "send(Lnet/minecraft/network/protocol/Packet;)V": "Lnet/minecraft/server/network/ServerGamePacketListenerImpl;m_9829_(Lnet/minecraft/network/protocol/Packet;)V",
+        "send(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketSendListener;)V": "Lnet/minecraft/server/network/ServerGamePacketListenerImpl;m_243119_(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketSendListener;)V"
+      },
+      "com/aizistral/nochatreports/common/mixins/client/MixinRowHelper": {
+        "addChild(Lnet/minecraft/client/gui/layouts/LayoutElement;)Lnet/minecraft/client/gui/layouts/LayoutElement;": "Lnet/minecraft/client/gui/layouts/GridLayout$RowHelper;m_264139_(Lnet/minecraft/client/gui/layouts/LayoutElement;)Lnet/minecraft/client/gui/layouts/LayoutElement;"
+      },
+      "com/aizistral/nochatreports/common/mixins/server/MixinServerboundChatCommandPacket": {
+        "argumentSignatures": "Lnet/minecraft/network/protocol/game/ServerboundChatCommandPacket;f_237924_()Lnet/minecraft/commands/arguments/ArgumentSignatures;"
+      },
+      "com/aizistral/nochatreports/common/mixins/client/MixinMinecraft": {
+        "getProfileKeyPairManager": "Lnet/minecraft/client/Minecraft;m_231465_()Lnet/minecraft/client/multiplayer/ProfileKeyPairManager;",
+        "<init>(Lnet/minecraft/client/main/GameConfig;)V": "Lnet/minecraft/client/Minecraft;<init>(Lnet/minecraft/client/main/GameConfig;)V",
+        "allowsTelemetry": "Lnet/minecraft/client/Minecraft;m_261210_()Z"
+      },
+      "com/aizistral/nochatreports/common/mixins/client/MixinRealmsConnect": {
+        "connect": "Lnet/minecraft/realms/RealmsConnect;m_175031_(Lcom/mojang/realmsclient/dto/RealmsServer;Lnet/minecraft/client/multiplayer/resolver/ServerAddress;)V"
+      },
+      "com/aizistral/nochatreports/common/mixins/client/MixinChatComponent": {
+        "addRecentChat": "Lnet/minecraft/client/gui/components/ChatComponent;m_93783_(Ljava/lang/String;)V",
+        "Lnet/minecraft/client/gui/components/ComponentRenderUtils;wrapComponents(Lnet/minecraft/network/chat/FormattedText;ILnet/minecraft/client/gui/Font;)Ljava/util/List;": "Lnet/minecraft/client/gui/components/ComponentRenderUtils;m_94005_(Lnet/minecraft/network/chat/FormattedText;ILnet/minecraft/client/gui/Font;)Ljava/util/List;",
+        "addMessage(Lnet/minecraft/network/chat/Component;Lnet/minecraft/network/chat/MessageSignature;ILnet/minecraft/client/GuiMessageTag;Z)V": "Lnet/minecraft/client/gui/components/ChatComponent;m_240465_(Lnet/minecraft/network/chat/Component;Lnet/minecraft/network/chat/MessageSignature;ILnet/minecraft/client/GuiMessageTag;Z)V"
+      },
+      "com/aizistral/nochatreports/common/mixins/client/MixinToastComponent": {
+        "addToast": "Lnet/minecraft/client/gui/components/toasts/ToastComponent;m_94922_(Lnet/minecraft/client/gui/components/toasts/Toast;)V"
+      },
+      "com/aizistral/nochatreports/forge/mixins/client/MixinClientPacketListener": {
+        "onDisconnect": "Lnet/minecraft/client/multiplayer/ClientPacketListener;m_7026_(Lnet/minecraft/network/chat/Component;)V"
+      },
+      "com/aizistral/nochatreports/common/mixins/client/MixinServerData": {
+        "read": "Lnet/minecraft/client/multiplayer/ServerData;m_105385_(Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/client/multiplayer/ServerData;",
+        "write": "Lnet/minecraft/client/multiplayer/ServerData;m_105378_()Lnet/minecraft/nbt/CompoundTag;"
+      },
+      "com/aizistral/nochatreports/common/mixins/common/MixinServerStatus": {
+        "enforcesSecureChat": "Lnet/minecraft/network/protocol/status/ServerStatus;f_242955_()Z"
+      },
+      "com/aizistral/nochatreports/common/mixins/server/MixinDedicatedServer": {
+        "enforceSecureProfile": "Lnet/minecraft/server/dedicated/DedicatedServer;m_214005_()Z"
+      },
+      "com/aizistral/nochatreports/common/mixins/server/MixinPlayerList": {
+        "verifyChatTrusted": "Lnet/minecraft/server/players/PlayerList;m_247528_(Lnet/minecraft/network/chat/PlayerChatMessage;)Z"
+      },
+      "com/aizistral/nochatreports/common/mixins/server/MixinServerboundChatSessionUpdatePacket": {
+        "handle": "Lnet/minecraft/network/protocol/game/ServerboundChatSessionUpdatePacket;m_5797_(Lnet/minecraft/network/protocol/game/ServerGamePacketListener;)V"
+      },
+      "com/aizistral/nochatreports/common/mixins/server/MixinServerboundChatPacket": {
+        "signature": "Lnet/minecraft/network/protocol/game/ServerboundChatPacket;f_240898_()Lnet/minecraft/network/chat/MessageSignature;"
+      },
+      "com/aizistral/nochatreports/common/mixins/client/MixinClientPacketListener": {
+        "send(Lnet/minecraft/network/protocol/Packet;)V": "Lnet/minecraft/client/multiplayer/ClientPacketListener;m_104955_(Lnet/minecraft/network/protocol/Packet;)V"
+      },
+      "com/aizistral/nochatreports/common/mixins/client/MixinOnlineServerEntry": {
+        "render": "Lnet/minecraft/client/gui/screens/multiplayer/ServerSelectionList$OnlineServerEntry;m_6311_(Lcom/mojang/blaze3d/vertex/PoseStack;IIIIIIIZF)V"
+      },
+      "com/aizistral/nochatreports/forge/mixins/client/MixinClientConnection": {
+        "channelInactive": "Lnet/minecraft/network/Connection;channelInactive(Lio/netty/channel/ChannelHandlerContext;)V"
+      },
+      "com/aizistral/nochatreports/common/mixins/client/MixinChatScreen": {
+        "init": "Lnet/minecraft/client/gui/screens/ChatScreen;m_7856_()V",
+        "normalizeChatMessage": "Lnet/minecraft/client/gui/screens/ChatScreen;m_232706_(Ljava/lang/String;)Ljava/lang/String;",
+        "handleChatInput": "Lnet/minecraft/client/gui/screens/ChatScreen;m_241797_(Ljava/lang/String;Z)Z",
+        "tick": "Lnet/minecraft/client/gui/screens/ChatScreen;m_86600_()V"
+      },
+      "com/aizistral/nochatreports/common/mixins/client/MixinGuiMessageTag": {
+        "system": "Lnet/minecraft/client/GuiMessageTag;m_240701_()Lnet/minecraft/client/GuiMessageTag;",
+        "systemSinglePlayer": "Lnet/minecraft/client/GuiMessageTag;m_257673_()Lnet/minecraft/client/GuiMessageTag;"
+      },
+      "com/aizistral/nochatreports/common/mixins/client/MixinJoinMultiplayerScreen": {
+        "init": "Lnet/minecraft/client/gui/screens/multiplayer/JoinMultiplayerScreen;m_7856_()V"
+      },
+      "com/aizistral/nochatreports/common/mixins/client/MixinConnectScreen": {
+        "startConnecting": "Lnet/minecraft/client/gui/screens/ConnectScreen;m_169267_(Lnet/minecraft/client/gui/screens/Screen;Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/multiplayer/resolver/ServerAddress;Lnet/minecraft/client/multiplayer/ServerData;)V"
+      },
+      "com/aizistral/nochatreports/common/mixins/client/MixinServerStatusPinger$1": {
+        "Lnet/minecraft/network/protocol/status/ServerStatus;description()Lnet/minecraft/network/chat/Component;": "Lnet/minecraft/network/protocol/status/ServerStatus;f_134900_()Lnet/minecraft/network/chat/Component;",
+        "handleStatusResponse(Lnet/minecraft/network/protocol/status/ClientboundStatusResponsePacket;)V": "Lnet/minecraft/client/multiplayer/ServerStatusPinger$1;m_6440_(Lnet/minecraft/network/protocol/status/ClientboundStatusResponsePacket;)V"
+      }
+    }
+  }
+}
